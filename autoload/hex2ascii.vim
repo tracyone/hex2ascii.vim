@@ -26,17 +26,20 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
+let s:curfilepath=globpath(&rtp, "hex2ascii")
 function! hex2ascii#Convert(hexfile,outputfile)
-    if !executable("../hex2ascii")
-        echom "Please build the hex2ascii program first!See readme.md!"
-        return -1;
+    if s:curfilepath == ""
+        redraw | echom "Please build the hex2ascii program first!See readme.md!"
+        return -1
     endif
     if !filereadable(a:hexfile)
-        echom "Can not read file ".a:hexfile
+        redraw | echom "Can not read file ".a:hexfile
     endif
-    call system("../hex2ascii ".a:hexfile." ".a:outputfile)
+    call system(s:curfilepath." ".a:hexfile." ".a:outputfile)
     if v:shell_error != 0
-        echom "Convert Error!"
+        redraw | echom "Convert Error!"
+    else
+        redraw | echom "Convert Success!"
     endif
     return v:shell_error
 endfunction
