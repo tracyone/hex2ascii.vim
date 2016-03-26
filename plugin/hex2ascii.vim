@@ -24,7 +24,7 @@
 "=============================================================================
 
 
-if exists('g:loaded_vimshell')
+if exists('g:loaded_hex2ascii')
     finish
 endif
 
@@ -33,4 +33,4 @@ function! Testxxxxooo()
     call hex2ascii#Convert(expand("%"),l:filename)
 endfunction
 
-let g:loaded_vimshell = 1
+let g:loaded_hex2ascii = 1
