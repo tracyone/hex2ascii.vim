@@ -1,0 +1,5 @@
+test/
+.ycm_extra_conf.pyc
+Debug/
+Release/
+hex2ascii
