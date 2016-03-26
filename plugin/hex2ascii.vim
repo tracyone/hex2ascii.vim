@@ -28,7 +28,7 @@ if exists('g:loaded_hex2ascii')
     finish
 endif
 
-function! Testxxxxooo() 
+function! Hex2asciiConvert() 
     let l:filename=input("Please input the file name! ")
     call hex2ascii#Convert(expand("%"),l:filename)
 endfunction

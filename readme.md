@@ -7,7 +7,7 @@ Similar to `Save With Encoding-Hexiadecimal` in SublimeText 3.
 Usage:
 
 ```vim
-:call hex2ascii#Convert({hexfile},{outputfile})
+:call Hex2asciiConvert()
 ```
 
 return 0 if convert successfully,return negative number if error.
