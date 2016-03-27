@@ -30,7 +30,8 @@ endif
 
 function! Hex2asciiConvert() 
     let l:filename=input("Please input the file name! ")
-    call hex2ascii#Convert(expand("%"),l:filename)
+    let l:ret =  hex2ascii#Convert(expand("%"),l:filename)
+    return l:ret
 endfunction
 
 let g:loaded_hex2ascii = 1
